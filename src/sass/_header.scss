@@ -1,0 +1,139 @@
+.header{
+  min-width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  background-color: none;
+  z-index: 2;
+  background-image: $header-bgc;
+  @include breakpointMax(xl){
+    height: 70px;
+  }
+  @include breakpointMax(lg){
+    height: 50px;
+  }
+  @include breakpointMax(1000px){
+    background-image: none;
+  }
+  @include breakpointMax(sm){
+    height: 60px;
+  }
+  &__content{
+    width: 100vw;
+    max-width: 2560px;
+    height: 60px;
+    justify-content: space-between;
+    display: flex;
+  }
+}
+
+.logo{
+  z-index: 2;
+  padding: 10px;
+  width: 170px;
+  transition: .3s;
+  @include breakpointMax(900px){
+    width: 120px;
+  }
+  @include breakpointMax(sm){
+    width: 120px;
+  }
+}
+
+.navigation{
+  &__links{
+    transition: .5s;
+    margin-right: 10px;
+    display: flex;
+    &--mobile{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      top: 60px;
+      left: -100vw;
+      width: 0;
+      height: 0;
+      box-shadow: 2px 2px 2px 0px dimgray;
+      padding: 20px 10px 0 10px;
+    }
+    &--active{
+      color: white !important; 
+      opacity: 100%;
+      position: fixed;
+      transform: translateX(20px);
+      top: 60px;
+      left: -20px;
+      width: 80vw;
+      height: 100vh;
+      background-color: $pop-up-container-bg;
+      @include breakpointMax(xxxs){
+        width: 95vw;
+      }
+      @include breakpointMin(md){
+        display: none;
+      }
+    }
+  }
+  &__link{
+    z-index: 2;
+    list-style:none;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    padding: 10px;
+    color: $nav-link-color;
+    cursor: pointer;
+    transition: .3s all;
+    transform: translateX(8px);
+    @include breakpointMax(md){
+      margin-left: -25px;
+      padding: 20px;
+    }
+    &:hover{
+      color: $nav-link-color-hover;
+    }
+    &--mobile{
+      width: 100%;
+      text-align: left;
+      padding-left: 45px;
+      display: block;
+      min-width: 100%;
+      color: $nav-link-color-mobile; 
+      a{
+        display: block;
+        min-width: 100%;
+      }
+    }
+    img{
+      width: 25px;
+      filter: brightness(90%);
+      transition: .3s all;
+      &:hover{
+        filter: brightness(70%);
+      }
+    }        
+  }
+  &__hamburger{
+    min-width: 70px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 1rem;
+    display: block;
+    cursor: pointer;
+    color: $nav-link-color;
+    transform: translate(15px, -5px);
+    @include breakpointMin(md) {
+      display: none;
+    }
+  }   
+}
+
+
+
+
+

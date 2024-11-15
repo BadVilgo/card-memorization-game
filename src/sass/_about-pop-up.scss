@@ -1,0 +1,49 @@
+.about-pop-up{
+  @include pop-up;
+  &__container{
+    @include pop-up-container;
+  }
+  &__header{
+    @include pop-up-header;
+  }
+  &__text{
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    @include breakpointMax(md){
+      font-size: 1rem;
+      margin-bottom: 0px;
+      padding: 5px;
+    }
+    @include breakpointMax(sm){
+      font-size: .9rem;
+    }
+  }
+  &__score{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__score-text{
+    margin-right: 40px;
+  }
+  &__buttons{
+    @include pop-up-buttons;
+  }
+  &__button{
+    @include pop-up-button;
+  }
+  &__copyright{
+    margin-top: 30px;
+    padding: 5px;
+    font-size: .9rem;
+    @include breakpointMax(md){
+      margin-top: 5px;
+      font-size: .8rem;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
